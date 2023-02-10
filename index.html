@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Sam Martinelli</title>
 </head>
+
 <body>
-    hi this is some body text.
+    <main>
+        <header>
+            <h1> sam martinelli </h1>
+            <p>hi my name is sam. I'm a 4th year computer science student at <span> UC San Diego. </span> I'm currently seeking a full time role in software engineering but I also may pursue some other <a href = "passions.html"> passions </a> instead.</p>
+            <p> check out my exploratory coding public page <a href="explore.html"> here</a></p>
+            <!-- i'd like to make the ucsd text look cool in the future. maybe add some flame font or something-->
+        </header>
+
+    
+        <p> would u like some background music?</p>
+        <audio controls src="tf2.mp3"></audio>
+        <div class = " magic square">
+            <p> here's some code to make a spinning square in canvas</p>
+            <pre>
+                <code>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+let angle = 0;
+const animate = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate(angle);
+    ctx.fillRect(-25, -25, 50, 50);
+    angle += 0.015;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    requestAnimationFrame(animate);
+};
+animate();
+            </code>
+        </pre>
+
+        </div>
+        
+        
+     
+        <canvas id="canvas" width="200" height="200"></canvas>
+        <script>
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            let angle = 0;
+            const animate = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.translate(canvas.width / 2, canvas.height / 2);
+                ctx.rotate(angle);
+                ctx.fillRect(-25, -25, 50, 50);
+                angle += 0.015;
+                ctx.setTransform(1, 0, 0, 1, 0, 0);
+                requestAnimationFrame(animate);
+            };
+            animate();
+        </script>
+
+
+
+    </main>
+    
+    <footer>
+        <picture>
+        <img src = "cat-explode.gif">
+    </picture>
+        <div> thanks for looking at my website. find me below</div>
+        <nav>
+            <ul>
+                <li><a href="https://twitter.com/sammartinelli11"> twitter </a> </li>
+                <li> <a href="https://github.com/skmartinelli"> github </a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
+
 </html>
